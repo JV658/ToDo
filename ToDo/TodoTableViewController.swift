@@ -46,6 +46,8 @@ class TodoTableViewController: UITableViewController {
             let newToDo = Todo(title: todoTile)
             todoList.todos.append(newToDo)
             
+            tableView.reloadData()
+            
             print(todoList.todos.count)
         }
         
