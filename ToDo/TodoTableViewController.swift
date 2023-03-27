@@ -18,72 +18,18 @@ class TodoTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
-    @IBAction func reloadTableView(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
     
-    @IBAction func addToDo(_ sender: Any) {
-        print("pre adding \(todoList.todos.count)")
-        
-        let alert = UIAlertController(title: "Add ToDo", message: nil, preferredStyle: .alert)
-        
-        alert.addTextField(){
-            textfield in
-            textfield.placeholder = "ToDo Title"
-        }
-        
-        let actionCancel = UIAlertAction(title: "Cancal", style: .cancel)
-        
-        let actionOK = UIAlertAction(title: "OK", style: .default){
-            [self] _ in
-            
-            let textField = alert.textFields![0]
-            let todoTile = textField.text!
-            
-            let newToDo = Todo(title: todoTile)
-            todoList.todos.append(newToDo)
-            
-            tableView.reloadData()
-            
-            print(todoList.todos.count)
-        }
-        
-        alert.addAction(actionOK)
-        alert.addAction(actionCancel)
-
-        
-        self.present(alert, animated: true)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
-    @IBAction func toggleEditMode(_ sender: UIButton) {
-        // get the name of the sender
-        
-        /**
-         if its edit
-            change name (setTitle) "done"
-            turn on edit mode (tableView.editmode = true)
-        if its done
-            change name to "edit"
-            turn off edit mode
-         */
-    
-        
-        
-        let senderName = sender.titleLabel!.text
-        
-        if senderName == "Edit" {
-            sender.setTitle("Done", for: .normal)
-//            tableView.isEditing = true
-            tableView.setEditing(true, animated: true)
-        } else {
-            sender.setTitle("Edit", for: .normal)
-//            tableView.isEditing = false
-            tableView.setEditing(false, animated: true)
-        }
-    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -141,14 +87,30 @@ class TodoTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case "add":
+            let dst = segue.destination as! DetailsViewController
+            
+            dst.todoList = todoList
+        case "edit":
+            // get the destination
+            let dst = segue.destination as! DetailsViewController
+            // inject todoList
+            dst.todoList = todoList
+            // inject select todo
+            let indexPath = tableView.indexPathForSelectedRow!
+            let index = indexPath.row
+            let todo = todoList.todos[index]
+            dst.todo = todo
+            /// HINT: look for a tableView Method that will get the selecte indexPath
+        default:
+            preconditionFailure("unidentified segue ID: \(segue.identifier)")
+        }
     }
-    */
-
 }
