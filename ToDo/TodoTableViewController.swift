@@ -43,19 +43,29 @@ class TodoTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as! TodoTableViewCell
 
         // Configure the cell...
         let row = indexPath.row
         let section = indexPath.section
+        let currentTodo = todoList.todos[row]
+        
+        cell.todo = currentTodo
         
 //        cell.textLabel!.text = todoList.todos[row].title
         
         // set the cell title to be the same as todo.title
+        cell.titleLabel.text = currentTodo.title
         
         // set the date to be the date, if date is nil hide label
+        if let dateCompleted = currentTodo.dateCompleted {
+            cell.dateCompletedLabel.text = "completed date"
+        } else {
+            cell.dateCompletedLabel.alpha = 0
+        }
         
         // set UISwitch to on or off based on the completeness
+        cell.completeSwitch.isOn = currentTodo.isComplete
         
 
         return cell
