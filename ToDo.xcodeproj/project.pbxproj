@@ -15,6 +15,7 @@
 		DB60C7B129B63DF400F338F9 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB60C7B029B63DF400F338F9 /* TodoTableViewController.swift */; };
 		DB60C7B329B645B800F338F9 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB60C7B229B645B800F338F9 /* Todo.swift */; };
 		DB60C7B529B6464800F338F9 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB60C7B429B6464800F338F9 /* TodoList.swift */; };
+		DB655F5029D1F175002F516A /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB655F4F29D1F175002F516A /* TodoTableViewCell.swift */; };
 		DBB0FB5029C8B17E00E19B7D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB0FB4F29C8B17E00E19B7D /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		DB60C7B029B63DF400F338F9 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 		DB60C7B229B645B800F338F9 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		DB60C7B429B6464800F338F9 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		DB655F4F29D1F175002F516A /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		DBB0FB4F29C8B17E00E19B7D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 				DB60C79A29B63C6E00F338F9 /* AppDelegate.swift */,
 				DB60C79C29B63C6E00F338F9 /* SceneDelegate.swift */,
 				DB60C7B029B63DF400F338F9 /* TodoTableViewController.swift */,
+				DB655F4F29D1F175002F516A /* TodoTableViewCell.swift */,
 				DBB0FB4F29C8B17E00E19B7D /* DetailsViewController.swift */,
 				DB60C7B229B645B800F338F9 /* Todo.swift */,
 				DB60C7B429B6464800F338F9 /* TodoList.swift */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB655F5029D1F175002F516A /* TodoTableViewCell.swift in Sources */,
 				DB60C7B529B6464800F338F9 /* TodoList.swift in Sources */,
 				DB60C79B29B63C6E00F338F9 /* AppDelegate.swift in Sources */,
 				DB60C7B129B63DF400F338F9 /* TodoTableViewController.swift in Sources */,

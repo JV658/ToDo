@@ -9,7 +9,7 @@ import UIKit
 
 class TodoTableViewController: UITableViewController {
 
-    var todoList = TodoList()
+    var todoList: TodoList!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,14 @@ class TodoTableViewController: UITableViewController {
         let row = indexPath.row
         let section = indexPath.section
         
-        cell.textLabel!.text = todoList.todos[row].title
+//        cell.textLabel!.text = todoList.todos[row].title
+        
+        // set the cell title to be the same as todo.title
+        
+        // set the date to be the date, if date is nil hide label
+        
+        // set UISwitch to on or off based on the completeness
+        
 
         return cell
     }
